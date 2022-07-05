@@ -221,7 +221,7 @@ if __name__ == "__main__":
   sort = sorted(time_rs.items() , key = lambda item: item[1]) # link https://stackoverflow.com/questions/8966538/syntax-behind-sortedkey-lambda #item[1]: sort time_rs theo list time
   count_frame = dict()
 
-  out = cv2.VideoWriter(os.path.join(video_output_path,f'{vid}_{att_query}_brief.avi'),cv2.VideoWriter_fourcc('M','J','P','G'), framerate, (frame_width, frame_height))
+  out = cv2.VideoWriter(os.path.join(video_output_path,f'{vid}_{att_query}_brief.avi'),cv2.VideoWriter_fourcc(*'mp4v'), framerate, (frame_width, frame_height))
   for key, inter in sort:
     if inter[0] not in count_frame.keys():
       count_frame[inter[0]] = []
